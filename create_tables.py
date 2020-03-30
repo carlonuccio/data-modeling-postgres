@@ -56,7 +56,7 @@ def db_connection(hostname, dbname):
     :return: connection conn and a cursor cur
     """
     try:
-        conn = psycopg2.connect("host="+ hostname + " dbname=" + dbname)
+        conn = psycopg2.connect("host="+ hostname + " dbname=" + dbname + " user=student password=student")
         conn.set_session(autocommit=True)
     except psycopg2.Error as e:
         print("Error connection to database")
